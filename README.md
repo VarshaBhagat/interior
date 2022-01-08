@@ -1,6 +1,6 @@
 # interior
-Start the local server
+Start the local server -
 npm start
 
-Create Build
+Create Build -
 npm run build
