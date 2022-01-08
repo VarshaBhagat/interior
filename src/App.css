@@ -1,38 +1,27 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  position: fixed;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+  z-index: 1;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+  width: 8rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.quote {
+  background-color: #cd2345;
   color: white;
+  text-transform: uppercase;
+  font-weight: 600;
 }
-
-.App-link {
-  color: #61dafb;
+.section {
+  height: 100vh;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section1 {
+  position: relative;
+  top: 8vh;
+  height: 62vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(https://images.livmatrix.com/img/landingpages/full-home-interiors/20190219/Web-banner-FINAL-1.jpg);
 }
