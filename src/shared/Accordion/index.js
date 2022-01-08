@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import './index.css';
 
 const CustomAccordion = ({name, content, header, title }) => {
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(name);
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
