@@ -4,38 +4,56 @@ import Box from '@mui/material/Box';
 import MobileStepper from '@mui/material/MobileStepper';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import { Typography } from '@mui/material';
-
+import img1 from './img/1.jpg';
+import img2 from './img/2.jpg';
+import img3 from './img/3.jpg';
+import img4 from './img/4.jpg';
+import img5 from './img/5.jpg';
+import img6 from './img/6.jpg';
+import img7 from './img/7.jpg';
+import img8 from './img/8.jpg';
+import img9 from './img/9.jpg';
+import img10 from './img/10.jpg';
+import img11 from './img/11.jpg';
+import img12 from './img/12.jpg';
+import img13 from './img/13.jpg';
+import img14 from './img/14.jpg';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
-  {
-    subtitle: 'San Francisco – Oakland Bay Bridge, United States',
-    title: 'Leave a lasting impression',
-    imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
+  {imgPath:img1,
   },
-  {
-    subtitle: 'Bird',
-    title: 'Leave a lasting impression',
-    imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
+  {imgPath:img2,
   },
-  {
-    subtitle: 'Bali, Indonesia',
-    title: 'Leave a lasting impression',
-    imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80',
+  {imgPath:img3,
   },
-  {
-    subtitle: 'Goč, Serbia',
-    title: 'Leave a lasting impression',
-    imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
+  {imgPath:img4,
+  },
+  {imgPath:img5,
+  },
+  {imgPath:img6,
+  },
+  {imgPath:img7,
+  },
+  {imgPath:img8,
+  },
+  {imgPath:img9,
+  },
+  {imgPath:img10,
+  },
+  {imgPath:img11,
+  },
+  {imgPath:img12,
+  },
+  {imgPath:img13,
+  },
+  {imgPath:img14,
   },
 ];
 
@@ -52,52 +70,33 @@ const Slider = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-//   const handleStepChange = (step) => {
-//     setActiveStep(step);
-//   };
+  const handleStepChange = (step) => {
+    setActiveStep(step);
+  };
 
   return (
-    <Box sx={{ p:10 }}>
-      {/* <Paper
-        square
-        elevation={0}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          height: 50,
-          pl: 2,
-          bgcolor: 'background.default',
-        }}
-      >
-        <Typography>{images[activeStep].label}</Typography>
-      </Paper> */}
+    <Box sx={{ p:1 }}>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
-        // onChangeIndex={handleStepChange}
+        onChangeIndex={handleStepChange}
         enableMouseEvents
       >
         {images.map((step, index) => (
-          <div key={step.subtitle}>
+          <div key={index}>
             {Math.abs(activeStep - index) <= 2 ? (
-                <Grid container>
-                    <Grid item sm={6}>
-                        <Box
-                            component="img"
-                            sx={{
-                            display: 'block',
-                            overflow: 'hidden',
-                            height: 400
-                            }}
-                            src={step.imgPath}
-                            alt={step.subtitle}
-                        />
-                    </Grid>
-                    <Grid container item sm={6} alignItems="center" direction="column">
-                        <Typography variant="h4">{step.title}</Typography>
-                        <Typography variant="h5">{step.subtitle}</Typography>
-                    </Grid>
-                </Grid>
+              <Grid container justifyContent="center">
+                <Box
+                  component="img"
+                  sx={{
+                  display: 'block',
+                  overflow: 'hidden',
+                  height: 600
+                  }}
+                  src={step.imgPath}
+                  alt={index}
+                />
+              </Grid>
             ) : null}
           </div>
         ))}
@@ -112,7 +111,6 @@ const Slider = () => {
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
           >
-            Next
             {theme.direction === 'rtl' ? (
               <KeyboardArrowLeft />
             ) : (
@@ -127,11 +125,9 @@ const Slider = () => {
             ) : (
               <KeyboardArrowLeft />
             )}
-            Back
           </Button>
         }
       />
-    <section className="section"> hi</section>
     </Box>
 
   );

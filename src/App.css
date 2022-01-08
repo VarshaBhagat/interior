@@ -1,12 +1,17 @@
-
+@keyframes anim {
+  from {
+    transform: scale(1) translateX(0);
+  }
+  to {
+    transform: scale(1.2) translateX(-1%);
+  }
+}
 .header {
   position: fixed;
-  background-color: white;
-  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
   z-index: 1;
 }
 .logo {
-  width: 8rem;
+  width: 6rem;
 }
 .quote {
   background-color: #cd2345;
@@ -14,14 +19,26 @@
   text-transform: uppercase;
   font-weight: 600;
 }
-.section {
-  height: 100vh;
-}
+
 .section1 {
-  position: relative;
-  top: 8vh;
-  height: 62vw;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url(https://images.livmatrix.com/img/landingpages/full-home-interiors/20190219/Web-banner-FINAL-1.jpg);
+  height: 60vw;
+  background-size: cover;
+  background-image: url('./img/main.jpg');
+  animation: anim 15s linear infinite alternate;
+}
+
+.freeQuote {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: #231f20;
+  color: white;
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

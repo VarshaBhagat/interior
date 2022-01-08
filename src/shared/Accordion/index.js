@@ -31,15 +31,15 @@ const CustomAccordion = ({name, content, header, title }) => {
                 { expanded === name ? 
                   (<Typography sx={{ color: 'text.secondary' }} variant='p'>{title}</Typography>) 
                 :
-                  (content.map((i)=>(
-                    <>
+                  (content.map((i, index)=>(
+                    <Box key={i.key+index}>
                       <Typography variant='div'>{i.key}</Typography>
                       <ul className='content-list-header'>
                         {
-                          i.value.map((ele)=>(<li className='content-list-item'>{ele},</li>))
+                          i.value.map((ele, index)=>(<li key={ele+index} className='content-list-item'>{ele},</li>))
                         }
                       </ul>
-                    </>
+                    </Box>
                   )))
                 }
             </Grid>
